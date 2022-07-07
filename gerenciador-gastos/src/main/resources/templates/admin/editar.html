@@ -1,0 +1,36 @@
+<div th:replace="compartilhado/topo"></div>
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Editar Adm</h1>
+    <p class="mb-4">
+        Editar o adm
+    </p>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4" style="padding: 30px;">
+        <form method="POST" th:action="@{'/admin/' + ${admin?.id} + '/atualizar'}">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" required th:value="${admin?.nome}" id="nome" name="nome" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" required id="email" th:value="${admin?.email}" name="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" class="form-control" required id="senha" th:value="${admin?.senha}" name="senha" placeholder="Enter password">
+            </div>
+            <div class="form-group">
+                <label for="observacao">Observacao</label>
+                <input class="form-control" id="observacao" th:value="${admin.observacao}" name="observacao" placeholder="Enter name observacao">
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+<div th:replace="compartilhado/baixo"></div>
